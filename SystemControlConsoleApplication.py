@@ -62,30 +62,37 @@ def list_commands():
     print("5 - Exit Program")
     print("0 - Help")
     print("Choose your action: (0 - Help)")
-    system_control_linux(check_user_input(user_input()))
+    if "Linux" in system:
+        system_control_linux(check_user_input(user_input()))
+    elif "Windows" in system:
+        system_control_windows(check_user_input(user_input()))
 
 
 def system_control_windows(decision):
     if decision == 0:
-         list_commands()
+        list_commands()
     elif decision == 1:
+        delay()
         os.system("shutdown /p")
     elif decision == 2:
+        delay()
         os.system("shutdown /r")
     elif decision == 3:
+        delay()
         os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
     elif decision == 4:
+        delay()
         os.system("shutdown /l")
     elif decision == 5:
         exit_program()
     else:
-         print("Помилка, оберіть необхідну дію(0-5):")
-         system_control_windows(check_user_input(user_input()))
+        print("Помилка, оберіть необхідну дію(0-5):")
+        system_control_windows(check_user_input(user_input()))
 
 
 def system_control_linux(decision):
     if decision == 0:
-         list_commands()
+        list_commands()
     elif decision == 1:
         delay()
         os.system("systemctl poweroff")
@@ -104,10 +111,10 @@ def system_control_linux(decision):
         os.system("")
         exit_program()
     elif decision == 5:
-         exit_program()
+        exit_program()
     else:
-         print("Помилка, оберіть необхідну дію(0-5):")
-         system_control_linux(check_user_input(user_input()))
+        print("Помилка, оберіть необхідну дію(0-5):")
+        system_control_linux(check_user_input(user_input()))
 
 
 def main():
