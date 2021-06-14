@@ -40,7 +40,7 @@ def strArray():
     arr = []
     i = 0
     while i < size:
-        item = random.choice(letter)
+        item = ''.join(random.choice(letter) for i in range(random.randint(1,8)))
         arr.append(item)
         i += 1
     print(arr)
