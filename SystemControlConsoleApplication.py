@@ -4,6 +4,7 @@ import time
 # import threading
 # import asyncio
 # from threading import Thread
+#
 
 print("SytemConrol")
 system = platform.system()
@@ -69,12 +70,16 @@ def system_control_windows(decision):
     if decision == 0:
          list_commands()
     elif decision == 1:
+        delay()
         os.system("shutdown /p")
     elif decision == 2:
+        delay()
         os.system("shutdown /r")
     elif decision == 3:
+        delay()
         os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
     elif decision == 4:
+        delay()
         os.system("shutdown /l")
     elif decision == 5:
         exit_program()
