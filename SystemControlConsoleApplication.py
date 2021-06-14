@@ -63,7 +63,10 @@ def list_commands():
     print("5 - Exit Program")
     print("0 - Help")
     print("Choose your action: (0 - Help)")
-    system_control_linux(check_user_input(user_input()))
+    if "Linux" in system:
+        system_control_linux(check_user_input(user_input()))
+    elif "Windows" in system:
+        system_control_windows(check_user_input(user_input()))
 
 
 def system_control_windows(decision):
